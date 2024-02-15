@@ -8,6 +8,8 @@ builder.Services.AddApiConfig();//configs gerais isoladas
 
 builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddSwaggerGen();
 
 builder.Services.ResolveIoC();

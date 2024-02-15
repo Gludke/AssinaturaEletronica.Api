@@ -1,4 +1,6 @@
-﻿namespace Assinatura.Api.Configuration;
+﻿using Assinatura.Infra.Drive.UrCompanyApi;
+
+namespace Assinatura.Api.Configuration;
 
 public static class IoCConfig
 {
@@ -9,7 +11,7 @@ public static class IoCConfig
         //'AddSingleton' - mesma instância para todos os users logados. O .Net, nesse caso, não confunde os contextos.
         //service.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-        //service.AddScoped<IFornecedorRepository, FornecedorRepository>();
+        service.AddScoped<IUrCompanyApi, UrCompanyApi>();
 
         return service;
     }
