@@ -2,5 +2,5 @@
 
 public interface IDocService
 {
-
+    Task CriarPacoteDocs();
 }

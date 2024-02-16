@@ -22,8 +22,10 @@ public class UrCompanyApi : IUrCompanyApi
 
         var bodyJson = CriarBodyJsonJwtToken();
 
-        var request = new HttpRequestMessage(HttpMethod.Post, _urlApi + urlRota);
-        request.Content = new StringContent(bodyJson, Encoding.UTF8, "application/json");
+        var request = new HttpRequestMessage(HttpMethod.Post, _urlApi + urlRota)
+        {
+            Content = new StringContent(bodyJson, Encoding.UTF8, "application/json")
+        };
 
         using (var client = new HttpClient())
         {
@@ -60,6 +62,9 @@ public class UrCompanyApi : IUrCompanyApi
 
         throw new NotImplementedException();
     }
+
+
+
 
     #region OTHER METHODS
 

@@ -10,4 +10,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Assinatura.Infra.Data\Assinatura.Infra.Data.csproj" />
+    <ProjectReference Include="..\Assinatura.Infra.Drive\Assinatura.Infra.Drive.csproj" />
+  </ItemGroup>
+
 </Project>

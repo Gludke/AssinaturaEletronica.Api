@@ -4,12 +4,18 @@ namespace Assinatura.Infra.Drive.UrCompanyApi.Models;
 
 public class GetJwtResponse
 {
+    [JsonPropertyName("data")]
+    public DataJwtResponse Data { get; set; }
+}
+
+public class DataJwtResponse
+{
     [JsonPropertyName("token")]
     public string Token { get; set; }
 
     [JsonPropertyName("issuedAt")]
-    public DateTimeOffset IssuedAt { get; set; }
+    public DateTime IssuedAt { get; set; }
 
     [JsonPropertyName("expireIn")]
-    public DateTimeOffset ExpireIn { get; set; }
+    public DateTime ExpireIn { get; set; }
 }

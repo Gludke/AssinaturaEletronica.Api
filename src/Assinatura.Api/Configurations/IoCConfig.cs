@@ -1,4 +1,6 @@
-﻿using Assinatura.Infra.Drive.UrCompanyApi;
+﻿using Assinatura.Domain.Services;
+using Assinatura.Domain.Services.Interfaces;
+using Assinatura.Infra.Drive.UrCompanyApi;
 
 namespace Assinatura.Api.Configuration;
 
@@ -6,12 +8,10 @@ public static class IoCConfig
 {
     public static IServiceCollection ResolveIoC(this IServiceCollection service)
     {
-        //service.AddScoped<MeuDbContext>();
-
-        //'AddSingleton' - mesma instância para todos os users logados. O .Net, nesse caso, não confunde os contextos.
-        //service.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+        //service.AddScoped<SqlDbContext>();
 
         service.AddScoped<IUrCompanyApi, UrCompanyApi>();
+        service.AddScoped<IDocService, DocService>();
 
         return service;
     }
