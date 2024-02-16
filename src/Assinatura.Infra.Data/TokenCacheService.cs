@@ -15,8 +15,8 @@ public class TokenCacheService : ITokenCacheService
 
     public void SetTokenAssEletronica(string token, DateTime expirationTime)
     {
-        // Armazena o token e o tempo de expiração no cache de memória
-        _cache.Set("tokenAssEletronica", token, expirationTime);
+        _cache.Set("tokenAssEletronica", token);
+        _cache.Set("tokenAssEletronica_Time", expirationTime);
     }
 
     public string? GetTokenAssEletronica()
@@ -28,7 +28,7 @@ public class TokenCacheService : ITokenCacheService
     public DateTime? GetTokenExpirationTimeAssEletronica()
     {
         // Obtém o tempo de expiração do token do cache de memória
-        return _cache.Get<DateTime?>("tokenAssEletronica_ExpirationTime");
+        return _cache.Get<DateTime?>("tokenAssEletronica_Time");
     }
 
     public bool TokenAssEletronicaEstaValido()
