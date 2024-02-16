@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\Assinatura.Infra.Data\Assinatura.Infra.Data.csproj" />
+    <ProjectReference Include="..\Assinatura.Infra.Drive\Assinatura.Infra.Drive.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Assinatura.Infra.Data\Assinatura.Infra.Data.csproj" />
-    <ProjectReference Include="..\Assinatura.Infra.Drive\Assinatura.Infra.Drive.csproj" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
