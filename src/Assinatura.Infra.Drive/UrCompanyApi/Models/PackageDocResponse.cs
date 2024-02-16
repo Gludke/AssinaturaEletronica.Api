@@ -4,6 +4,12 @@ namespace Assinatura.Infra.Drive.UrCompanyApi.Models;
 
 public class PackageDocResponse
 {
+    [JsonPropertyName("success")]
+    public bool Success { get; set; }
+
+    [JsonPropertyName("message")]
+    public List<object> Message { get; set; }
+
     [JsonPropertyName("data")]
     public DataDocResponse Data { get; set; }
 }
