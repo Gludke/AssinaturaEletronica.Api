@@ -1,5 +1,6 @@
 ﻿using Assinatura.Infra.Data.Interfaces;
 using Assinatura.Infra.Drive.UrCompanyApi.Models;
+using Microsoft.Extensions.Configuration;
 using System.Dynamic;
 using System.Net;
 using System.Net.Http.Headers;
@@ -11,17 +12,23 @@ namespace Assinatura.Infra.Drive.UrCompanyApi;
 public class UrCompanyApi : IUrCompanyApi
 {
     private ITokenCacheService _tokenCacheService;
-    public readonly IConfiguration _configuration;
+    public readonly IConfiguration _config;
 
-    private readonly string _urlApi = "https://demo.urcompany.com.br/restapi";
-    private readonly string _userId = "bDgN2SbCeJsAaBdH-cEkVhQ63uFlWjSaA";
-    private readonly string _apiId = "q75Zr875zQ75zR86-3VgN2SaAbCeKvGp4";
-    private readonly string _privateKeyBase64 = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAKWkhUwpDOPHPZt4mr3lu5UdY2GsJjOCSXU60YrMA9cyNlaSbtYCR39mPkskFtUCzsIO5xZJ7Tf2hTTjR7klXTR9ITdM9uwhDPcw6fxFhC+dOzztg43FyY1wMI5mK6dCWWoRldLjoOPvmOgbT0OLG/ppZtkcTXeDDn4vB+BI4UHXAgMBAAECgYAhorLesEdJyZ+c/nSNsyTQNtODde2b8AzynSsHwD3XaP7XvYx8MKJMIHrtzzpDrvpFNbl/MSvWfVy3TJ+33Pp75dKr0yFHpub9U4deFGQ7RL+Y/IGg/bO23IECasLFG2r5PK5AU0C2eYgGB0p4DUUCvVOT/OkRGVNxMuImmnmygQJBAOlwj87uiiBa/i66Kd6m/i7+BrTej9eona3865QGcp1LSDarRLemUUNPYxQ3qZdiHFTw4U/cs2EK6omnL+1CeucCQQC1pp6b3drhtkb7yXPW7iC25evjpUVZYMqDL2y7bGInoaAhaKacm6pAl2XM/P2aN5jv8ZhgO92OWAPdo0uzQZORAkBlPcsw3OWM6MnKbDTSeqxMpyEzej76MgfIuKNW/IDi1Q6JnzfbSkd+IMUAtK9Zl1RgRmQBZd9qG/jiIF850BZLAkBX2wNhXXbsre09AB0fucJm02M4kgmthcvMkRZku7HpexloryXOHtfEL7VT5JR/jx5QBqhs+udYXidYfg8x3qiRAkEA0mcgYDiy5JUedveslAg5/S1BIUhix3EYfWxIeQwuOm1U4OZRT9AeKZFltR9tCgDyyMMCkHvJDHimXabAxQMKRg==";
+    private readonly string _urlApi;
+    private readonly string _userId;
+    private readonly string _apiId;
+    private readonly string _privateKeyBase64;
 
 
-    public UrCompanyApi(ITokenCacheService tokenCacheService)
+    public UrCompanyApi(ITokenCacheService tokenCacheService, IConfiguration config)
     {
         _tokenCacheService = tokenCacheService;
+        _config = config;
+
+        _urlApi = _config.GetSection("APIs:UrCompany.urlApi").Value!;
+        _userId = _config.GetSection("APIs:UrCompany.userId").Value!;
+        _apiId = _config.GetSection("APIs:UrCompany.apiId").Value!;
+        _privateKeyBase64 = _config.GetSection("APIs:UrCompany.privateKeyBase64").Value!;
     }
 
     /// <summary>
