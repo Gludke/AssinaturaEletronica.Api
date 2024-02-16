@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assinatura.Api", "src\Assinatura.Api\Assinatura.Api.csproj", "{8BF734B2-F33C-4A2B-88A7-95612162F83B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assinatura.Api", "src\Assinatura.Api\Assinatura.Api.csproj", "{8BF734B2-F33C-4A2B-88A7-95612162F83B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assinatura.Domain", "src\Assinatura.Domain\Assinatura.Domain.csproj", "{7BF53BB7-D481-48F8-9F18-4DDEBE68D14A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assinatura.Domain", "src\Assinatura.Domain\Assinatura.Domain.csproj", "{7BF53BB7-D481-48F8-9F18-4DDEBE68D14A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assinatura.Infra.Data", "src\Assinatura.Infra.Data\Assinatura.Infra.Data.csproj", "{3781C293-3833-4FEB-9FE4-BF5519A86621}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assinatura.Infra.Data", "src\Assinatura.Infra.Data\Assinatura.Infra.Data.csproj", "{3781C293-3833-4FEB-9FE4-BF5519A86621}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assinatura.Infra.Drive", "src\Assinatura.Infra.Drive\Assinatura.Infra.Drive.csproj", "{808FA114-03D6-40B6-986A-0E5028448DAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assinatura.Infra.Drive", "src\Assinatura.Infra.Drive\Assinatura.Infra.Drive.csproj", "{808FA114-03D6-40B6-986A-0E5028448DAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assinatura.Webhook.Api", "src\Assinatura.Webhook.Api\Assinatura.Webhook.Api.csproj", "{1E04DC32-DF1E-4733-9DF9-E1A7B16DE6FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{808FA114-03D6-40B6-986A-0E5028448DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{808FA114-03D6-40B6-986A-0E5028448DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{808FA114-03D6-40B6-986A-0E5028448DAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E04DC32-DF1E-4733-9DF9-E1A7B16DE6FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E04DC32-DF1E-4733-9DF9-E1A7B16DE6FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E04DC32-DF1E-4733-9DF9-E1A7B16DE6FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E04DC32-DF1E-4733-9DF9-E1A7B16DE6FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

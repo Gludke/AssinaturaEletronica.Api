@@ -24,7 +24,7 @@ public class UrCompanyApi : IUrCompanyApi
     {
         _tokenCacheService = tokenCacheService;
         _config = config;
-
+        //criar essas seções em 'appsettings.json'
         _urlApi = _config.GetSection("APIs:UrCompany.urlApi").Value!;
         _userId = _config.GetSection("APIs:UrCompany.userId").Value!;
         _apiId = _config.GetSection("APIs:UrCompany.apiId").Value!;
@@ -68,7 +68,6 @@ public class UrCompanyApi : IUrCompanyApi
         var bearerToken = _tokenCacheService.GetTokenAssEletronica();
 
         const string urlRota = "/doc/getDocumentPackage";
-
 
         throw new NotImplementedException();
     }
@@ -115,7 +114,6 @@ public class UrCompanyApi : IUrCompanyApi
 
         return response;
     }
-
 
 
 
